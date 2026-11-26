@@ -37,7 +37,7 @@ def check_inputs():
     if missing:
         sys.exit("missing inputs (run from the repo root):\n  " + "\n  ".join(map(str, missing)) +
                  "\n- NWB files: python3 download.py \"sub-F06/sub-F06_ses-CPFE-F06-S3*\" (and S1*)"
-                 "\n- out/session*: the whole-session streaming cell of example_clean.ipynb (S3) / example_2.ipynb (S1),"
+                 "\n- out/session*: the whole-session streaming cell of minimal_pipeline.ipynb (S3),"
                  "\n  or streaming.run_session(files, out_dir) on the session's AVI files")
 
 
@@ -66,7 +66,7 @@ def run(name, session_dir, nwb, n_null, ax):
 
 
 def chunk0(n_null):
-    """Chunk 0 of S3 (33 s) against a fresh CaImAn CNMF-E run, as in example_clean.ipynb: motion correction, x2
+    """Chunk 0 of S3 (33 s) against a fresh CaImAn CNMF-E run, as in minimal_pipeline.ipynb: motion correction, x2
     downsampling, my chain and zones, CNMF-E with the authors' parameters (~2 min). Reports my value, the chance
     mean and the best of n_null draws for each row of the notebook's table."""
     import caiman as cm

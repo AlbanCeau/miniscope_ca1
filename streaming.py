@@ -1,4 +1,4 @@
-"""Streaming version of my classical pipeline (example.ipynb), for the whole session.
+"""Streaming version of my classical pipeline (minimal_pipeline.ipynb), for the whole session.
 
 Same chain as the notebook, chunk by chunk, so peak RAM stays around 2 GB whatever the session length:
     rigid motion correction (CaImAn, one template for all chunks) -> x2 downsample

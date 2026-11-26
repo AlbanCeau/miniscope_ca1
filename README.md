@@ -28,7 +28,7 @@ The published footprints and traces are a reference to compare a fresh CNMF-E ru
 
 ## Running it
 
-`example_clean.ipynb` is the notebook. Its outputs are saved, so it reads without running. To rerun it from scratch: `uv sync`, then `uv run jupyter lab` and Run All. The first run downloads the session (~1 GB into `data/`), runs motion correction and CaImAn on the first chunk, and streams the whole session into `out/session` (~3.5 GB of memory-mapped arrays; later runs reuse it). CaImAn writes ~2 GB of temporary files to `~/caiman_data/temp`.
+`minimal_pipeline.ipynb` is the notebook. Its outputs are saved, so it reads without running. To rerun it from scratch: `uv sync`, then `uv run jupyter lab` and Run All. The first run downloads the session (~1 GB into `data/`), runs motion correction and CaImAn on the first chunk, and streams the whole session into `out/session` (~3.5 GB of memory-mapped arrays; later runs reuse it). CaImAn writes ~2 GB of temporary files to `~/caiman_data/temp`.
 
 - `streaming.py`: the detection chain over the whole session, chunk by chunk.
 - `fullsession.py`: whole-session comparison with the authors' published extraction.
