@@ -1,0 +1,17 @@
+data/
+*.mmap
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+out/*
+# the notebook's movies are published with it
+!out/raw_vs_stabilised.mp4
+!out/highpass.mp4
+!out/highpass_smoothed.mp4
+!out/highpass_smoothed_flat.mp4
+!out/activation.mp4
+!out/activation_sqrt.mp4
+!out/rise.mp4
+!out/activations.mp4
+.DS_Store
+CLAUDE.md
