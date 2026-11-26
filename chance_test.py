@@ -8,6 +8,7 @@ Written with an AI assistant (Claude Code). Usage, from the repo root: python ch
 or python chance_test.py chunk [n_null] for chunk 0 (33 s) against a fresh CaImAn run, as in the notebook
 (about 3 min for 10,000 draws on both sessions). Needs data/ (download.py) and out/session, out/session_S1 (streaming).
 """
+import os
 import sys
 import time
 from pathlib import Path
@@ -19,6 +20,10 @@ import matplotlib.pyplot as plt
 
 import fullsession
 from streaming import fov_mask
+
+# CaImAn's temporary memmaps go inside the repo (out/caiman_temp), not ~/caiman_data/temp
+os.makedirs("out/caiman_temp", exist_ok=True)
+os.environ.setdefault("CAIMAN_TEMP", os.path.abspath("out/caiman_temp"))
 
 SESSIONS = {
     "S3": ("out/session", "data/sub-F06/sub-F06_ses-CPFE-F06-S3_behavior+image+ophys.nwb"),
